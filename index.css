@@ -51,6 +51,10 @@
     color: #FFFFFF;
 }
 
+.list-group-item{
+    border-style: none;
+}
+
 .cta-banner-box{
     width: 1168px;
     height: 326px;
@@ -96,4 +100,8 @@
     font-weight: 400;
     font-size: 14px;
     color: #000000;
+}
+
+.link-dark{
+    text-decoration: none;
 }
