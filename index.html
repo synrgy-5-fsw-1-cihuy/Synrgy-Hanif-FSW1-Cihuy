@@ -39,5 +39,56 @@
         lastName = "Yoshikage";
         firstName = "Kira";
         console.log("Watashi no na wa", firstName, lastName);
+
+        // Data Type
+        // String
+        const text = "Yorokobe shounen!";
+        console.log(text);
+        console.log(typeof text);
+
+        // Number
+        const angka = 9;
+        const fakeNumber = "24" + 24;
+        console.log(angka);
+        console.log(typeof angka);
+        console.log(fakeNumber);
+
+        // tes ting
+        let x = 9;
+        let y = 3;
+        x = 14;
+        console.log(x%y);
+
+        // Boolean
+        const isMarried = false;
+        console.log("Marital Status", isMarried);
+
+        // Decimal
+        const sizeTank = 12.5;
+        console.log(sizeTank);
+
+        // Array
+        const list = ["Ichika", "Nino", "Miku", "Yotsuba", "Itsuki"];
+        list.push("Fuutarou"); // masukin dari belakang --last index
+        list.pop(); // hapus dr belakang
+        list.unshift("Fuutarou"); // masukin dari depan --first index
+        list.shift("Fuutarou"); // hapus dr depan
+        console.log(list);
+
+        // Object or Dict
+        const person = {}; // not defined diawal
+        const book = {
+            name: "Kira",
+            writer: "Yoshi",
+            publisher: "Kage"
+        } // defined diawal
+        person.name = "Kira Yoshikage";
+        person.address = "Morioh-cho";
+        person.age = 33;
+        person.detail = ["Killer Queen", "Stray Cat"];
+        console.log(person);
+        console.log(person.name);
+        console.log(`name ${person.name}, address ${person.address}, age ${person.age}, detail ${person.detail}`);
+        console.log(person["name"] + person["address"] + person["age"]);
     </script>
 </html>
