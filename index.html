@@ -15,44 +15,49 @@
     <!-- Navbar -->
     <section id="navbar">
         <nav class="navbar navbar-expand-lg" style="background-color: #F1F3FF;">
-            <div class="container-fluid mx-5">
-                <a class="navbar-brand" href="#">Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            <div class="container-fluid">
+                <a class="navbar-brand ms-4 ms-lg-5" href="#">
+                    <img src="assets/img/img_logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"
-                    style="background: #F1F3FF;">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="#our-services">Our Services</a>
-                        <a class="nav-link" href="#why-us">Why Us</a>
-                        <a class="nav-link" href="#testimonial">Testimonial</a>
-                        <a class="nav-link" href="#faq">FAQ</a>
-                        <button type="button" class="btn btn-custom btn-banner">Register</button>
+                <div class="collapse navbar-collapse offcanvas offcanvas-end w-50" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
+                    <div class="offcanvas-header w-100">
+                      <h5 class="offcanvas-title px-1">BCR</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                </div>
+                    <div class="navbar-nav px-3 ms-lg-auto me-auto me-lg-5">
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#our-services">Our Services</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#why-us">Why Us</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#testimonial">Testimonial</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#faq">FAQ</a>
+                        <button type="button" class="btn btn-custom btn-banner mt-2 mt-sm-0">Register</button>
+                    </div>
+                  </div>
             </div>
         </nav>
     </section>
 
     <!-- Banner -->
     <section id="banner">
-        <div class="row pt-5 me-0 pe-0" style="background-color: #F1F3FF;">
-            <div class="col-lg-6">
-                <div class="justify-content-center m-5 p-3">
-                    <p class="banner-text-title ms-4">
-                        Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
-                    </p>
-                    <p class="text-content ms-4 pe-4 me-4">
-                        Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga
-                        terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
-                    </p>
-                    <button type="button" class="btn btn-banner ms-4">Mulai Sewa Mobil</button>
+        <div class="row row-cols-1 row-cols-md-2 pt-3 pt-sm-4 gy-4" style="background-color: #F1F3FF;">
+            <div class="align-self-center">
+                <p class="banner-text-title mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5 fs-2">
+                    Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+                </p>
+                <p class="text-content mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5">
+                    Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga
+                    terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+                </p>
+                <div class="mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5 pb-md-3">
+                    <button type="button" class="btn btn-banner">Mulai Sewa Mobil</button>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <img src="assets/img/img_car.png" alt="car" class="img-fluid">
+            <div class="align-self-center">
+                <img src="assets/img/img_car.png" alt="car" class="img-fluid w-100">
             </div>
         </div>
     </section>
@@ -60,15 +65,15 @@
 
     <!-- Our Services -->
     <section id="our-services">
-        <div class="row mt-5 mb-2 pt-5 py-2 justify-content-center">
-            <div class="col-lg-5 ps-5">
-                <img src="assets/img/img_service.png" alt="services">
+        <div class="row mt-2 mt-md-5 mb-2 pt-2 pt-md-5 py-2 justify-content-center">
+            <div class="col-sm-12 col-md-6 col-lg-6 ps-lg-5">
+                <img src="assets/img/img_service.png" alt="services" class="img-fluid p-3">
             </div>
-            <div class="col-lg-5 my-5">
-                <p class="text-title px-5">
+            <div class="col-sm-12 col-md-6 col-lg-6 my-5">
+                <p class="text-title px-4 px-md-3 px-lg-5 fs-4">
                     Best Car Rental for any kind of trip in (Lokasimu)!
                 </p>
-                <p class="text-content ps-5 pe-4">
+                <p class="text-content px-4 px-md-3 px-lg-5">
                     Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang
                     lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis,
                     wedding, meeting, dll.
@@ -103,13 +108,13 @@
     <section id="why-us">
         <div class="row mt-5 mb-2 pt-5 py-2">
             <div class="col-lg-4 ms-5 ps-5">
-                <p class="text-title">Why Us?</p>
+                <p class="text-title fs-4">Why Us?</p>
                 <p class="text-content">Mengapa harus pilih Binar Car Rental?</p>
             </div>
         </div>
-        <div class="row mx-5 mt-4 mb-5 px-3">
+        <div class="row mx-5 mt-2 mb-5 px-3 gy-3">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <img src="assets/img/icon_thumbup.png" alt="complete" class="mt-2 ms-2">
                         <h5 class="text-subtitle my-3 ms-2 fw-bold">Mobil Lengkap</h5>
@@ -119,7 +124,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <img src="assets/img/icon_price.png" alt="price" class="mt-2 ms-2">
                         <h5 class="text-subtitle my-3 ms-2 fw-bold">Harga Murah</h5>
@@ -129,7 +134,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <img src="assets/img/icon_24hrs.png" alt="24hrs" class="mt-2 ms-2">
                         <h5 class="text-subtitle my-3 ms-2 fw-bold">Layanan 24 Jam</h5>
@@ -139,7 +144,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card h-100">
                     <div class="card-body">
                         <img src="assets/img/icon_professional.png" alt="professional" class="mt-2 ms-2">
                         <h5 class="text-subtitle my-3 ms-2 fw-bold">Sopir Profesional</h5>
@@ -178,10 +183,10 @@
                         <div class="img-box">
                             <img src="assets/img/p_merah.jpg" alt="">
                         </div>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-block">
                             <p class="carousel-text-title fw-semibold m-0">Pesulap Merah 27, Tangerang</p>
                             <img src="assets/img/Rate.png" alt="" class="mt-0">
-                            <p class="text-content">"Kalo ada silahkan buktikan! Coba buktikan dong! Jangan cuma ngomong kayak gini. Ini tuduhan nih, ini fitnah! Nih, contohnya disini ada fakta, berusaha diputar balikkan, tapi sayangnya tetep fakta."</p>
+                            <p class="text-content">"Kalo ada silahkan buktikan! Coba buktikan dong! Jangan cuma ngomong kayak gini. Ini tuduhan nih, ini fitnah! Nih, contohnya disini ada fakta, berusaha diputar balikkan, tapi sayangnya tetep fakta. Terus gw gimana, menghidupi keluarga gw gimana? Menghidupi orang tua, menghidupi istri, menghidupi adek dan lain sebagainya."</p>
                             <!-- Terus gw gimana, menghidupi keluarga gw gimana? Menghidupi orang tua, menghidupi istri, menghidupi adek dan lain sebagainya.  -->
                         </div>
                     </div>
@@ -189,7 +194,7 @@
                         <div class="img-box">
                             <img src="assets/img/anya.jpg" alt="">
                         </div>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-block">
                             <p class="carousel-text-title fw-semibold m-0">Anya Forger 6, Ostania</p>
                             <img src="assets/img/Rate.png" alt="" class="mt-0">
                             <p class="text-content">"Anya peanuts ga suki"</p>
@@ -199,7 +204,7 @@
                         <div class="img-box">
                             <img src="assets/img/kotomine.jpg" alt="">
                         </div>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-block">
                             <p class="carousel-text-title fw-semibold m-0">Kotomine Kirei 38, Fuyuki</p>
                             <img src="assets/img/Rate.png" alt="" class="mt-0">
                             <p class="text-content">"Yorokobe Shounen, kimi no negai wa yoyaku kanau"</p>
@@ -210,7 +215,7 @@
                         <div class="img-box">
                             <img src="assets/img/Berserker.png" alt="">
                         </div>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-block">
                             <p class="carousel-text-title fw-semibold m-0">Heracles -, Greece</p>
                             <img src="assets/img/Rate.png" alt="" class="mt-0">
                             <p class="text-content" style="text-transform: uppercase;">"Grrrrrauuugghhoooouuugghhhhrrrrrr!"</p>
@@ -233,23 +238,23 @@
 
     <!-- CTA Banner -->
     <section id="cta-banner">
-        <div class="container my-5 py-5">
+        <div class="container my-5">
             <div class="cta-banner-box">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 mt-5">
-                        <p class="banner-text-title" style="color: white; text-align: center;">Sewa Mobil di
+                    <div class="col-lg-7 mt-5 px-4">
+                        <p class="banner-text-title fs-2" style="color: white; text-align: center;">Sewa Mobil di
                             (Lokasimu) Sekarang</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-6 my-3">
+                    <div class="col-lg-8 my-3 px-4">
                         <p class="text-content" style="color: white; text-align: center;">Lorem ipsum dolor sit amet
                             consectetur adipisicing elit. Soluta optio sed sequi adipisci recusandae animi voluptatibus
                             quaerat iusto aspernatur est.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-2 mt-3">
+                    <div class="col-3 col-lg-3 px-lg-5">
                         <button type="button" class="btn btn-banner">Mulai Sewa Mobil</button>
                     </div>
                 </div>
@@ -260,15 +265,15 @@
     <!-- FAQ -->
     <section id="faq">
         <div class="row justify-content-center my-5">
-            <div class="col-lg-4">
-                <div class="text-title">
+            <div class="col-12 col-md-4 ms-5 ms-md-0 ps-5 ps-md-0">
+                <div class="text-title fs-4">
                     <p>Frequently Asked Question</p>
                 </div>
                 <div class="text-content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-12 col-md-6 ps-5 ps-md-0 pe-5 pe-md-0">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -378,15 +383,15 @@
     <!-- Footer -->
     <section id="footer">
         <div class="row justify-content-center pt-5 pb-3 mt-4 mb-3">
-            <div class="col-lg-3">
-                <div class="text-content">
+            <div class="col-12 col-lg-3 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-3 mb-lg-0">
+                <div class="text-content fs-6">
                     <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
                     <p>binarcarrental@gmail.com</p>
                     <p>081-233-334-808</p>
                 </div>
             </div>
-            <div class="col-lg-2">
-                <div class="text-content px-3">
+            <div class="col-12 col-lg-2 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content px-lg-3 fs-6">
                     <table>
                         <tr>
                             <td><a href="#our-services" class="link-dark">Our services</a></td>
@@ -403,22 +408,22 @@
                     </table>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="text-content">
+            <div class="col-12 col-lg-3 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content fs-6">
                     <p>Connect with us</p>
                 </div>
-                <img src="assets/icon_facebook.png" alt="">
-                <img src="assets/icon_instagram.png" alt="">
-                <img src="assets/icon_twitter.png" alt="">
-                <img src="assets/icon_mail.png" alt="">
-                <img src="assets/icon_twitch.png" alt="">
+                <img src="assets/img/icon_facebook.png" alt="facebook">
+                <img src="assets/img/icon_instagram.png" alt="instagram">
+                <img src="assets/img/icon_twitter.png" alt="twitter">
+                <img src="assets/img/icon_mail.png" alt="mail">
+                <img src="assets/img/icon_twitch.png" alt="twitch">
                 
             </div>
-            <div class="col-lg-2">
-                <div class="text-content">
+            <div class="col-12 col-lg-2 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content fs-6">
                     <p>Copyright Binar 2022</p>
                 </div>
-                <div class="d-flex">Logo</div>
+                <div class="d-flex"><img src="assets/img/img_logo.png" alt=""></div>
             </div>
         </div>
     </section>
