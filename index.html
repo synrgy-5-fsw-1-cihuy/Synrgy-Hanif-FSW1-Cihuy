@@ -90,5 +90,16 @@
         console.log(person.name);
         console.log(`name ${person.name}, address ${person.address}, age ${person.age}, detail ${person.detail}`);
         console.log(person["name"] + person["address"] + person["age"]);
+
+
+        const listNumber = [1,3,5,2,9,4,6,7,8];
+        // Sort
+        listNumber.sort();
+        console.log(listNumber.sort());
+        // Search
+        console.info(listNumber.find(data => data == 5));
+        // Filter
+        const filteredArray = listNumber.filter(data => data > 5);
+        console.info(filteredArray);
     </script>
 </html>
