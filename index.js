@@ -60,3 +60,95 @@ if(parent.age > 35) {
 } else {
     console.log("Umurnya masih remaja");
 }
+
+// Operator
+// Assignment Operator
+// Operator utk assign value ke variable
+
+let styleRambut;
+styleRambut = "Mohawk"; // Assignment Operator
+console.log(styleRambut);
+
+// Aritmatika operator
+// Addition
+let numberOne = 5;
+let numberTwo = 6;
+let result = numberOne + numberTwo;
+console.log("Addition = " + result);
+console.log(numberOne+=numberTwo);
+
+// Substraction
+let resultSubstract = numberOne - numberTwo;
+console.log("Substraction = " + resultSubstract);
+
+// Divide
+let resultDivide = numberOne / numberTwo;
+console.log("Divide = " + resultDivide);
+
+// Multiply
+let resultMultiply = numberOne * numberTwo;
+console.log("Multiply = " + resultMultiply);
+
+// Modulo
+let resultModulo = numberOne % numberTwo;
+console.log("Modulo = " + resultModulo);
+
+// Increment & Decrement
+console.log(++numberOne);
+console.log(--numberOne);
+
+// Comparison
+// == === != !== <= >= ?(ternary)
+if(numberOne <= 10) {
+    console.log("lower");
+} else {
+    console.log("higher");
+}
+
+// Logical
+// &&(and) ||(or) !(not)
+const kota = "Jakarta";
+if(kota == "Jakarta" || kota != ""){
+    console.log("Kota di Indonesia");
+} else {
+    console.log("Bukan kota di Indonesia");
+}
+
+// Type Operator
+// typeof instanceof
+console.log(typeof kota);
+console.log(typeof numberOne);
+console.log(parent instanceof Array);
+console.log(parent instanceof Object);
+
+// Perulangan
+// For loop
+// for(let i = 0; i <= 5; i++) {
+//     console.log(i);
+// }
+
+// While loop
+// let i =  0;
+// while(i < 5) {
+//     console.log(i);
+//     i++;
+// }
+
+// Do while
+// do {
+//     console.log(i);
+//     i++;
+// } while(i < 5);
+
+
+kembarLima = ["Ichika", "Nino", "Miku", "Yotsuba", "Itsuka"];
+
+// Foreach loop
+// kembarLima.forEach(value => {
+//     console.log(value);
+// });
+
+// For of
+for (let data of kembarLima) {
+    console.log(data);
+}
