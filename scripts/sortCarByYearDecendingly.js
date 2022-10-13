@@ -23,9 +23,7 @@ function sortCarByYearDescendingly(cars) {
 
     for(let i = 0; i < result.length - 1; i++) {
       if(result[i].year < result[i + 1].year) {
-        let tmp = result[i];
-        result[i] = result[i + 1];
-        result[i + 1] = tmp;
+        [result[i], result[i + 1]] = [result[i + 1], result[i]];
         swapped = true;
       }
     }
