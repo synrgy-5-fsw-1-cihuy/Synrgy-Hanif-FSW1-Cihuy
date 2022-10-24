@@ -25,7 +25,7 @@ export class PersegiPanjang implements BangunDatar {
     _panjang: number = 0;
     _lebar: number = 0;
 
-    constructor(panjang, lebar) {
+    constructor(panjang: number, lebar: number) {
         this._panjang = panjang;
         this._lebar = lebar;
     }
@@ -44,7 +44,7 @@ export class Segitiga implements BangunDatar {
     _alas: number = 0;
     _tinggi: number = 0;
 
-    constructor(alas, tinggi) {
+    constructor(alas: number, tinggi: number) {
         this._alas = alas;
         this._tinggi = tinggi;
     }
@@ -62,7 +62,7 @@ export class Lingkaran implements BangunDatar {
     
     _jarijari: number = 0;
 
-    constructor(jarijari) {
+    constructor(jarijari: number) {
         this._jarijari = jarijari;
     }
 
