@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="paragraph">Aku coba</p>
+    <select id="choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <button type="button" onclick="getValueSelect()">Get Value</button> -->
+    <div id="form" style="border: 1px solid black; width: 200px; padding: 1%;">
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name"><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age"><br>
+
+            <label for="birthday">Birthday:</label><br>
+            <input type="text" id="birthday"><br>
+
+            <label for="city">City:</label><br>
+            <input type="text" id="city"><br>
+
+            <input type="button" id="Submit" value="Submit" onclick="processFormData()">
+            <input type="button" id="Cancel" value="Cancel" onclick="cancelFormData()">
+        </form>
+    </div>
+
+    <br><br>
+    <div id="data" style="border: 1px solid black; width: 200px; padding: 1%;">
+        <label for="nameData">Name:</label>
+        <p type="text" id="nameData"></p>
+
+        <label for="ageData">Age:</label>
+        <p type="number" id="ageData"></p>
+
+        <label for="birthdayData">Birthday:</label>
+        <p type="text" id="birthdayData"></p>
+
+        <label for="cityData">City:</label>
+        <p type="text" id="cityData"></p>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function processFormData() {
+        var name_element = document.getElementById('name').value;
+        var age_element = document.getElementById('age').value;
+        var birthday_element = document.getElementById('birthday').value;
+        var city_element = document.getElementById('city').value;
+
+        document.getElementById("nameData").innerHTML = name_element;
+        document.getElementById("ageData").innerHTML = age_element;
+        document.getElementById("birthdayData").innerHTML = birthday_element;
+        document.getElementById("cityData").innerHTML = city_element;
+    }
+
+    function cancelFormData() {
+        document.getElementById("nameData").innerHTML = "";
+        document.getElementById("ageData").innerHTML = "";
+        document.getElementById("birthdayData").innerHTML = "";
+        document.getElementById("cityData").innerHTML = "";
+    }
+    // document.write("Halo gan!");
+    // document.write("Konnichiwaaaaaa");
+    // document.write("<h2>UNICOOORRRRRNNNN!!!</h2>");
+    // document.write("<button>Klik disini!</button>");
+
+    // function getValueSelect() {
+    //     console.log(document.getElementById("choice").value);
+    // }
+</script>
+</html>
