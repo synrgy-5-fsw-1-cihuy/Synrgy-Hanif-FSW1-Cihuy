@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Binar Car Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <section id="navbar">
+        <nav class="navbar navbar-expand-lg" style="background-color: #F1F3FF;">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-4 ms-lg-5" href="index.html">
+                    <img src="assets/img/img_logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse offcanvas offcanvas-end w-50" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
+                    <div class="offcanvas-header w-100">
+                      <h5 class="offcanvas-title ms-1 ms-sm-3">BCR</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="navbar-nav px-3 ms-lg-auto me-auto me-lg-5">
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#our-services">Our Services</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#why-us">Why Us</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#testimonial">Testimonial</a>
+                        <a class="nav-link fw-semibold px-1 px-sm-3" href="#faq">FAQ</a>
+                        <button type="button" class="btn btn-custom btn-banner mt-2 ms-2 ms-sm-3">Register</button>
+                    </div>
+                  </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="row row-cols-1 row-cols-md-2 pt-3 pt-sm-4 gy-4" style="background-color: #F1F3FF;">
+            <div class="align-self-center">
+                <p class="banner-text-title mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5 fs-2">
+                    Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+                </p>
+                <p class="text-content mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5">
+                    Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga
+                    terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+                </p>
+                <div class="mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5 pb-md-3">
+                    <!-- <button type="button" class="btn btn-banner">Mulai Sewa Mobil</button> -->
+                </div>
+            </div>
+            <div class="align-self-center">
+                <img src="assets/img/img_car.png" alt="car" class="img-fluid w-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cari Mobil -->
+    <section id="cari-mobil">
+        <div class="container car-filter">
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="row">
+                        <h5>Pencarianmu</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg">
+                            <label class="form-label" for="Tipe Driver">Tipe Driver</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Pilih Tipe Driver</option>
+                                <option value="1">Dengan Sopir</option>
+                                <option value="2">Tanpa Sopir (Lepas Kunci)</option>
+                            </select>
+                        </div>
+                        <div class="col-lg">
+                            <label class="form-label" for="Tipe Driver">Tanggal</label>
+                            <input class="form-control" type="date" placeholder="Pilih Tanggal">
+                        </div>
+                        <div class="col-lg">
+                            <label class="form-label" for="Tipe Driver">Waktu Jemput/Ambil</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Pilih Waktu</option>
+                                <option value="1">08.00 WIB</option>
+                                <option value="2">09.00 WIB</option>
+                                <option value="3">10.00 WIB</option>
+                                <option value="4">11.00 WIB</option>
+                                <option value="5">12.00 WIB</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="form-label" for="Tipe Driver">Jumlah Penumpang (optional)</label>
+                            <input class="form-control" type="number" placeholder="Jumlah Penumpang">
+                        </div>
+                        <div class="col-lg align-self-center">
+                            <button class="btn btn-banner ms-4 mt-4">Cari Mobil</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="row justify-content-center pt-5 pb-3 mt-4 mb-3">
+            <div class="col-12 col-lg-3 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-3 mb-lg-0">
+                <div class="text-content fs-6">
+                    <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+                    <p>binarcarrental@gmail.com</p>
+                    <p>081-233-334-808</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-2 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content px-lg-3 fs-6">
+                    <ul style="list-style: none;" class="ps-0">
+                        <li class="pb-3"><a href="#our-services" class="link-dark">Our services</a></li>
+                        <li class="pb-3"><a href="#why-us" class="link-dark">Why Us</a></li>
+                        <li class="pb-3"><a href="#testimonial" class="link-dark">Testimonial</a></li>
+                        <li><a href="#faq" class="link-dark">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content fs-6">
+                    <p>Connect with us</p>
+                </div>
+                <img src="assets/img/icon_facebook.png" alt="facebook">
+                <img src="assets/img/icon_instagram.png" alt="instagram">
+                <img src="assets/img/icon_twitter.png" alt="twitter">
+                <img src="assets/img/icon_mail.png" alt="mail">
+                <img src="assets/img/icon_twitch.png" alt="twitch">
+                
+            </div>
+            <div class="col-12 col-lg-2 ps-5 ms-5 ps-lg-0 ms-lg-0 mb-4 mb-lg-0">
+                <div class="text-content fs-6">
+                    <p>Copyright Binar 2022</p>
+                </div>
+                <div class="d-flex"><img src="assets/img/img_logo.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
