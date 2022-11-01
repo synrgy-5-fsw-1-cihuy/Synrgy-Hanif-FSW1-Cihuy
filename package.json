@@ -1,0 +1,23 @@
+{
+  "name": "synrgy-hanif-fsw1-cihuy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy/issues"
+  },
+  "homepage": "https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
