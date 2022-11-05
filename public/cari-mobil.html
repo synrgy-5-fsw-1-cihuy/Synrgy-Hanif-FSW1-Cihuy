@@ -7,6 +7,8 @@
     <title>Binar Car Rental</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
@@ -67,10 +69,10 @@
         <div class="container car-filter">
             <div class="row justify-content-center">
                 <div class="col-lg px-4">
-                    <div class="row">
+                    <form class="row" id="form_filter_submit">
                         <div class="col-lg">
                             <label class="form-label car-filter-label" for="Tipe Driver">Tipe Driver</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" id="tipe_driver" aria-label="Default select example">
                                 <option selected>Pilih Tipe Driver</option>
                                 <option value="1">Dengan Sopir</option>
                                 <option value="2">Tanpa Sopir (Lepas Kunci)</option>
@@ -78,31 +80,42 @@
                         </div>
                         <div class="col-lg">
                             <label class="form-label car-filter-label" for="Tipe Driver">Tanggal</label>
-                            <input class="form-control" type="date" placeholder="Pilih Tanggal">
+                            <input class="form-control" id="tanggal_booking" type="date" placeholder="Pilih Tanggal">
                         </div>
                         <div class="col-lg">
                             <label class="form-label car-filter-label" for="Tipe Driver">Waktu Jemput/Ambil</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" id="waktu_booking" aria-label="Default select example">
                                 <option selected>Pilih Waktu</option>
-                                <option value="1">08.00 WIB</option>
-                                <option value="2">09.00 WIB</option>
-                                <option value="3">10.00 WIB</option>
-                                <option value="4">11.00 WIB</option>
-                                <option value="5">12.00 WIB</option>
+                                <option value="08:00:00">08.00 WIB</option>
+                                <option value="09:00:00">09.00 WIB</option>
+                                <option value="10:00:00">10.00 WIB</option>
+                                <option value="11:00:00">11.00 WIB</option>
+                                <option value="12:00:00">12.00 WIB</option>
+                            <!-- <input type="time" class="form-control" id="waktu_booking"> -->
                             </select>
                         </div>
                         <div class="col-lg">
                             <label class="form-label car-filter-label" for="Tipe Driver">Jumlah Penumpang (optional)</label>
-                            <input class="form-control" type="number" placeholder="Jumlah Penumpang">
+                            <input class="form-control" id="total_penumpang" type="number" placeholder="Jumlah Penumpang">
                         </div>
                         <div class="col-lg-2 align-self-center px-4 mt-4">
-                            <button class="btn btn-banner">Cari Mobil</button>
+                            <button class="btn btn-banner" id="btn-filter" type="submit">Cari Mobil</button>
                         </div>
                         
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <!-- Hasil Filter -->
+        <div class="container" style="margin-left: auto; margin-right: auto;">
+            <div class="mt-5 justify-content-center">
+                <div id="cars-container" class="row row-cols-3 g-3">
+                    
+                </div>
+            </div>
+        </div>
+        
     </section>
 
 
@@ -149,6 +162,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/car.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
 </body>
 
 </html>
