@@ -1,7 +1,15 @@
 const express = require("express"); // Import lib express
-// const {PORT = 8001} = process.env;
+const authToken = require("./middleware/auth_token");
+
+
 const PORT = 8001 || process.env.PORT;
 const app = express(); // Initiate express instance
+
+// Parser
+app.use(express.json());
+
+// Set view engine EJS
+app.set("view engine", "ejs");
 
 // Sample data array
 const users = [
@@ -18,13 +26,27 @@ const product = [
 // Routing handler
 // GET = ambil data
 app.get('/', (req, res) => {
-    res.json({message: "Index"});
+    // res.json({message: "Index"});
+    res.render('index', {
+        name: req.query.name
+    });
 });
 
-app.get('/api/users', (req, res) => {
-    res.json({data: users});
-});
+// app.get('/api/users', (req, res) => {
+//     res.json({
+//         message: "Create user", 
+//         body: req.body
+//     });
+// });
 
+app.get('/api/users', authToken, (req, res) => {
+    res.json({message: users});
+})
+
+
+// /:id => Path parameter
+// ?id=&name=  = Query parameter
+// request.body
 app.get('/api/users/:id', (request, response) => {
     response.json({message: "user by id"});
 });  
@@ -39,8 +61,15 @@ app.get('/api/product/:id', (req, res) => {
 });
 
 // POST = buat data
+// app.post('/api/users', (req, res) => {
+//     res.json({message: "Create user"});
+// });
+
 app.post('/api/users', (req, res) => {
-    res.json({message: "Create user"});
+    res.json({
+        message: "Create user", 
+        body: req.body
+    });
 });
 
 app.post('/api/product', (req, res) => {
@@ -67,6 +96,22 @@ app.delete('/api/product/:id', (req, res) => {
     res.send("Product Deleted");
 });
 
+// Study case
+app.get('/api/auth', authToken, (req, res) => {
+    res.json({message: "Authorized"});
+});
+
+app.put('/api/auth', authToken, (req, res) => {
+    res.json({message: "Authorized"});
+});
+
+app.post('/api/auth', authToken, (req, res) => {
+    res.json({message: "Authorized"});
+});
+
+app.delete('/api/auth', authToken, (req, res) => {
+    res.json({message: "Authorized"});
+});
 
 // Listen PORT
 app.listen(PORT, () => {
