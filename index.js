@@ -1,6 +1,7 @@
 const express = require("express"); // Import lib express
 const authToken = require("./middleware/auth_token");
-
+const formidable = require("formidable");
+const cloudinary = require("./config/cloudinary");
 
 const PORT = 8001 || process.env.PORT;
 const app = express(); // Initiate express instance
@@ -111,6 +112,31 @@ app.post('/api/auth', authToken, (req, res) => {
 
 app.delete('/api/auth', authToken, (req, res) => {
     res.json({message: "Authorized"});
+});
+
+// Media handling
+app.post('/upload', (req, res) => {
+    const form = formidable({multiples: false});
+    let uploadedFiles = "";
+
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            next(err);
+            return;
+        }
+
+        console.log(fields.name);
+        console.log(files.files.filepath);
+        
+        
+        cloudinary.uploader.upload(files.files.filepath, function(err, result) {
+            uploadedFiles = result.secure_url;
+            console.log(result);
+            res.json({message: "uploaded success", body: result.secure_url});
+        }).catch(err => {
+            console.error(err);
+        });
+    })
 });
 
 // Listen PORT
