@@ -4,7 +4,7 @@
     "password": "qwerty12345",
     "database": "ecommerce_development",
     "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",

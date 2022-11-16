@@ -2,12 +2,14 @@ const express = require("express"); // Import lib express
 const authToken = require("./middleware/auth_token");
 const formidable = require("formidable");
 const cloudinary = require("./config/cloudinary");
+const postRouter = require("./router/post.router.js");
 
 const PORT = 8001 || process.env.PORT;
 const app = express(); // Initiate express instance
 
 // Parser
 app.use(express.json());
+app.use(postRouter);
 
 // Set view engine EJS
 app.set("view engine", "ejs");
@@ -139,7 +141,17 @@ app.post('/upload', (req, res) => {
     })
 });
 
+
 // Listen PORT
 app.listen(PORT, () => {
     console.log(`Application running at localhost: ${PORT}`);
 });
+
+
+// Mini Challenge ORM
+// Ada Entitas Table Role User
+// Didalam table Role memiliki attribute name, permission, createdAt, updatedAt
+// Buat CRUD untuk manage data Role user
+// Durasi 50 menit
+// Present per tim
+// Tim dibagi menjadi 3 kelompok
