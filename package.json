@@ -1,0 +1,30 @@
+{
+  "name": "synrgy-hanif-fsw1-cihuy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy/issues"
+  },
+  "homepage": "https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy#readme",
+  "dependencies": {
+    "cloudinary": "^1.32.0",
+    "express": "^4.18.2",
+    "formidable": "^2.0.1",
+    "node": "^19.1.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.7"
+  }
+}
