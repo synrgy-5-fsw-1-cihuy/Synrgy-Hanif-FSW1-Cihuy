@@ -2,7 +2,7 @@
   "development": {
     "username": "hanif",
     "password": "qwerty12345",
-    "database": "bcr_development",
+    "database": "ecommerce_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
