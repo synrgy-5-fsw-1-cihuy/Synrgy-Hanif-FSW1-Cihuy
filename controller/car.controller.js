@@ -2,33 +2,38 @@ const formidableMiddleware = require("formidable");
 const cloudinaryConfig = require("../config/cloudinary.js");
 const models = require("../models");
 const Car = models.Car;
+const carService = require('../service/car.service.js')
 
 // All Car Handler
-const getAllCarHandler = (req, res) => {
-    Car.findAll().then(result => {
-        res.status(200).json({
-            data: result
-        });
-    }).catch(err => {
+const getAllCarHandler = async (req, res) => {
+    try{
+        const cars = await carService.doGetAllCars();
+        res.status(200).json({data: cars});
+    }
+
+    catch(err) {
         console.error(err);
         throw err;
-    });
+    }
 };
 
 // Car By ID Handler
-const getCarByIdHandler = (req, res) => {
-    Car.findByPk(req.params.id).then(result => {
-        if(result == null) {
-            res.status(404).json({
-                message: "Car not found"
-            });
+const getCarByIdHandler = async (req, res) => {
+    try{
+        const carById = await carService.doGetCarById(req.params.id, res);
+
+        if (carById == null) {
+            res.status(404).json({message: `Car not found with ids ${req.params.id}`});
             return;
-        }
-        res.status(200).json({data: result});
-    }).catch(err => {
+        };
+
+        res.status(200).json({data: carById});
+    }
+
+    catch(err){
         console.error(err);
         throw err;
-    });
+    }
 };
 
 // Create Car Handler
@@ -114,28 +119,22 @@ const putCarHandler = (req, res) => {
 };
 
 // Delete Car Handler
-const deleteCarHandler = (req, res) => {
-    Car.findByPk(req.params.id).then(result => {
-        if(result == null) {
-            res.status(404).json({
-                message: "Car not found"
-            });
-            return;
-        }
-        
-        Car.destroy({where: {id: req.params.id}}).then(result => {
-            res.status(202).json({
-                message: "Car deleted"
-            });
-        }).catch(err => {
-            console.error(err);
-            throw err;
-        });
+const deleteCarHandler = async (req, res) => {
+    try{
+        const delCarById = await carService.doDeleteCarById(req.params.id, res);
 
-    }).catch(err => {
+        if (delCarById == null) {
+            res.status(404).json({message: `Car not found with ids ${req.params.id}`});
+            return;
+        };
+
+        res.status(200).json({data: delCarById});
+    }
+
+    catch(err){
         console.error(err);
         throw err;
-    });
+    }
 };
 
 module.exports = {getAllCarHandler, getCarByIdHandler, postCarHandler, putCarHandler, deleteCarHandler};
