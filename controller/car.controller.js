@@ -121,14 +121,17 @@ const putCarHandler = (req, res) => {
 // Delete Car Handler
 const deleteCarHandler = async (req, res) => {
     try{
-        const delCarById = await carService.doDeleteCarById(req.params.id, res);
+        const id = req.params.id;
+        const data = await Car.delete(id, res);
+        // const delCarById = await carService.doGetCarById(req.params.id, res);
 
-        if (delCarById == null) {
-            res.status(404).json({message: `Car not found with ids ${req.params.id}`});
+        if (data == null) {
+            res.status(404).json({message: `Car not found with id ${id}`});
             return;
         };
+        data.destroy();
 
-        res.status(200).json({data: delCarById});
+        res.status(204);
     }
 
     catch(err){

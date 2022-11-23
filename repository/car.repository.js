@@ -10,7 +10,7 @@ const findCarById = async (id) => {
 };
 
 const deleteCarById = async (id) => {
-    return await Car.destroy(id);
+    return await Car.delete(id);
 };
 
 module.exports = {findAllCar, findCarById, deleteCarById};

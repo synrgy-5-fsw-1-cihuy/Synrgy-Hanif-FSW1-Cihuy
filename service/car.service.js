@@ -13,7 +13,8 @@ const doGetCarById = async (id) => {
 };
 
 const doDeleteCarById = async (id) => {
-    return await carRepository.deleteCarById(id);
+    const del = carRepository.findCarById(id);
+    return await carRepository.deleteCarById(del);
     // const deleteCarById = await carRepository.deleteCarById(id);
 
     // return deleteCarById;

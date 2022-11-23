@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/synrgy-5-fsw-1-cihuy/Synrgy-Hanif-FSW1-Cihuy#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cloudinary": "^1.32.0",
     "express": "^4.18.2",
     "formidable": "^2.0.1",
