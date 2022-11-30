@@ -4,6 +4,7 @@ const swaggerUi = require('swagger-ui-express');
 const formidableMiddleware = require("formidable");
 
 const carRouter = require("./router/car.router.js");
+const postRouter = require('./router/post.router.js');
 const userRouter = require('./router/user.router.js');
 
 const PORT = 8005 || process.env.PORT;
@@ -29,12 +30,12 @@ const options = {
       },
       servers: [
         {
-          url: "http://localhost:3000/posts",
+          url: "http://localhost:8005/api/",
         },
       ],
     },
     apis: [
-        "./router/car.router.js"
+        "./router/post.router.js"
     ],
 };
 const specs = swaggerJsDoc(options);
@@ -42,6 +43,7 @@ const specs = swaggerJsDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(carRouter);
+app.use(postRouter);
 app.use(userRouter);
 
 app.listen(PORT, () => {
