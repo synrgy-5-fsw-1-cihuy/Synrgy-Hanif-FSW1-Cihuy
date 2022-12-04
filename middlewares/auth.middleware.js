@@ -19,7 +19,6 @@ function authToken(request, response, next) {
 
         if (decoded.role == "admin" || decoded.role == "superadmin") {
             next();
-            return;
         }
 
         if (decoded.role == "member") {
@@ -28,7 +27,6 @@ function authToken(request, response, next) {
             }
         }
 
-        next();
     } catch(err) {
         response.status(401).json({error: "Unauthorized access"});
         throw err;
