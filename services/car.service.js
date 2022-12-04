@@ -1,6 +1,5 @@
 const repository = require("../repositories/car.repository.js");
 
-
 const doGetAllCars = async () => {
     return await repository.getAll();
 };
@@ -19,6 +18,6 @@ const doUpdateCar = async (data, id) => {
 
 const doDeleteCarById = async (id) => {
     return await repository.deleteCarById(id);
-}
+};
 
 module.exports = {doGetAllCars, doGetCarById, doCreateCar, doUpdateCar, doDeleteCarById};
