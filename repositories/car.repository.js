@@ -17,10 +17,8 @@ const update = async (data, id) => {
     return await Car.update(data, {where: {"id": id}});
 };
 
-const destroy = async (id) => {
-    return await Car.destroy({
-        Where: {id: id}
-    });
+const deleteCar = async (id) => {
+    return await Car.destroy({where: {"id": id}});
 };
 
-module.exports = {getAll, getById, insertOne, update, destroy};
+module.exports = {getAll, getById, insertOne, update, deleteCar};

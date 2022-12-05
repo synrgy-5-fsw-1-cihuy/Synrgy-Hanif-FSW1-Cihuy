@@ -30,7 +30,6 @@ function authToken(request, response, next) {
     } catch(err) {
         response.status(401).json({error: "Unauthorized access"});
         throw err;
-        return;
     };
     
 }

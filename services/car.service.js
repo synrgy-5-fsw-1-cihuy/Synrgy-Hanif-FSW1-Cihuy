@@ -17,7 +17,7 @@ const doUpdateCar = async (data, id) => {
 };
 
 const doDeleteCarById = async (id) => {
-    return await repository.deleteCarById(id);
+    return await repository.deleteCar(id);
 };
 
 module.exports = {doGetAllCars, doGetCarById, doCreateCar, doUpdateCar, doDeleteCarById};

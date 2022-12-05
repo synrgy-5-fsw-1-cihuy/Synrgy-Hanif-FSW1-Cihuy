@@ -2,6 +2,7 @@ const formidableMiddleware = require("formidable");
 const cloudinaryConfig = require("../config/cloudinary.js");
 const models = require("../models");
 const Car = models.Car;
+const jwt = require("../utils/jwt.js");
 const carService = require("../services/car.service.js")
 
 // All Car Handler
@@ -49,11 +50,16 @@ const postCarHandler = async (req, res) => {
     
             const uploadedFile = await cloudinaryConfig.uploader.upload(files.photo.filepath);
     
+            const authHeader = req.headers["authorization"];
+            const token = authHeader && authHeader.split(' ')[1];
+            const decodedToken = await jwt.checkTokenJwt(token);
+
             const carPayload = {
                 name: fields.name,
                 price: fields.price,
                 size: fields.size,
-                photo: uploadedFile.secure_url
+                photo: uploadedFile.secure_url,
+                createdBy: decodedToken.email
             };
     
             await carService.doCreateCar(carPayload);
@@ -90,11 +96,16 @@ const putCarHandler = async (req, res) => {
 
             const uploadedFile = await cloudinaryConfig.uploader.upload(files.photo.filepath);
 
+            const authHeader = req.headers["authorization"];
+            const token = authHeader && authHeader.split(' ')[1];
+            const decodedToken = await jwt.checkTokenJwt(token);
+
             const carPayload = {
                 name: fields.name,
                 price: fields.price,
                 size: fields.size,
-                photo: uploadedFile.secure_url
+                photo: uploadedFile.secure_url,
+                updatedBy: decodedToken.email
             };
 
             await carService.doUpdateCar(carPayload, req.params.id);
@@ -114,17 +125,21 @@ const putCarHandler = async (req, res) => {
 // Delete Car Handler
 const deleteCarHandler = async (req, res) => {
     try{
-        const id = req.params.id;
-        const data = await Car.delete(id, res);
-        // const delCarById = await carService.doGetCarById(req.params.id, res);
+        const carById = await carService.doGetCarById(req.params.id, res);
 
-        if (data == null) {
-            res.status(404).json({message: `Car not found with id ${id}`});
+        if (carById == null) {
+            res.status(404).json({message: `Car not found with id: ${req.params.id}`});
             return;
         };
-        data.destroy();
 
-        res.status(204);
+        const authHeader = req.headers["authorization"];
+        const token = authHeader && authHeader.split(' ')[1];
+        const decodedToken = await jwt.checkTokenJwt(token);
+        await carService.doUpdateCar({"deletedBy": decodedToken.email}, req.params.id);
+
+        await carService.doDeleteCarById(carById.id);
+
+        return res.status(204).json({data: ""});
     }
 
     catch(err){
