@@ -28,7 +28,7 @@ const registerMemberHandler = async (req, res) => {
                 role: "member"
             };
     
-            await userService.doCreateMember(userPayload);
+            await userService.doCreateUser(userPayload);
     
             return res.status(201).json({
                 message: "User created!",
@@ -69,7 +69,7 @@ const registerAdminHandler = async (req, res) => {
                 role: "admin"
             };
     
-            await userService.doCreateMember(userPayload);
+            await userService.doCreateUser(userPayload);
     
             return res.status(201).json({
                 message: "User created!",
