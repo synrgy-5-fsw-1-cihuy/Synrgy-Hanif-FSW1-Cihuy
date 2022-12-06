@@ -1,6 +1,7 @@
-# Belajar git
+# Belajar React
 
-# Notes
-# Notes 1
+### Install
+npx create-react-app (name)
+ex: npx create-react-app my-frontend-app
 
-# Notes 2
+
