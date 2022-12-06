@@ -10,12 +10,6 @@ const authMiddleware = require("../middlewares/auth.middleware.js");
  *      schemas:
  *          Car:
  *              type: object
- *              required:
- *                  - id
- *                  - name
- *                  - price
- *                  - size
- *                  - photo
  *              properties:
  *                  id:
  *                      type: integer
@@ -56,7 +50,7 @@ const authMiddleware = require("../middlewares/auth.middleware.js");
  * @swagger
  * components:
  *      schemas:
- *          CarRequest:
+ *          CarReq:
  *              type: object
  *              required:
  *                  - name
@@ -77,6 +71,62 @@ const authMiddleware = require("../middlewares/auth.middleware.js");
  *                      type: string
  *                      format: binary
  *                      description: The photo url of the car
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          CarGetAllRes:
+ *              type: object
+ *              properties:
+ *                  status:
+ *                      type: integer
+ *                      description: HTTP status code
+ *                  message:
+ *                      type: string
+ *                      description: The message response
+ *                  data:
+ *                      type: array
+ *                      description: The data result
+ *                      items:
+ *                          $ref: '#/components/schemas/Car'
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          CarGetByIdRes:
+ *              type: object
+ *              properties:
+ *                  status:
+ *                      type: integer
+ *                      description: HTTP status code
+ *                  message:
+ *                      type: string
+ *                      description: The message response
+ *                  data:
+ *                      description: The data result
+ *                      $ref: '#/components/schemas/Car'
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          CarCreateRes:
+ *              type: object
+ *              properties:
+ *                  status:
+ *                      type: integer
+ *                      description: HTTP status code
+ *                  message:
+ *                      type: string
+ *                      description: The message response
+ *                  data:
+ *                      description: The data result
+ *                      $ref: '#/components/schemas/Car'
  */ 
 
 /** 
@@ -104,7 +154,7 @@ const authMiddleware = require("../middlewares/auth.middleware.js");
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/Car'
+ *                              $ref: '#/components/schemas/CarGetAllRes'
  */ 
 router.get("/api/cars", authMiddleware, carController.getAllCarHandler);
 
@@ -130,7 +180,9 @@ router.get("/api/cars", authMiddleware, carController.getAllCarHandler);
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/Car'
+ *                              $ref: '#/components/schemas/CarGetByIdRes'
+ *              "404":
+ *                  description: Car not found
  */ 
 router.get("/api/cars/:id", authMiddleware, carController.getCarByIdHandler);
 
@@ -149,14 +201,14 @@ router.get("/api/cars/:id", authMiddleware, carController.getCarByIdHandler);
  *              content:
  *                  multipart/form-data:
  *                      schema:
- *                          $ref: '#/components/schemas/CarRequest'
+ *                          $ref: '#/components/schemas/CarReq'
  *          responses:
  *              "201":
  *                  description: Car successfully created
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/Car'
+ *                              $ref: '#/components/schemas/CarCreateRes'
  */ 
 router.post("/api/cars", authMiddleware, carController.postCarHandler);
 
@@ -182,14 +234,14 @@ router.post("/api/cars", authMiddleware, carController.postCarHandler);
  *              content:
  *                  multipart/form-data:
  *                      schema:
- *                          $ref: '#/components/schemas/CarRequest'
+ *                          $ref: '#/components/schemas/CarReq'
  *          responses:
  *              "201":
  *                  description: Car successfully updated
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/Car'
+ *                              $ref: '#/components/schemas/CarCreateRes'
  */ 
 router.put("/api/cars/:id", authMiddleware, carController.putCarHandler);
 

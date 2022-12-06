@@ -9,28 +9,22 @@ const userController = require("../controllers/user.controller.js");
  *      schemas:
  *          User:
  *              type: object
- *              required:
- *                  - id
- *                  - name
- *                  - email
- *                  - password
- *                  - role
  *              properties:
  *                  id:
  *                      type: integer
- *                      description: Auto-generated id of the car
+ *                      description: Auto-generated id of the User
  *                  name:
  *                      type: string
- *                      description: The name of the car
+ *                      description: The user's name
  *                  email:
  *                      type: string
- *                      description: The price of the car
+ *                      description: The user's email
  *                  password:
  *                      type: string
- *                      description: The size of the car
+ *                      description: The user's password
  *                  role:
  *                      type: string
- *                      description: The photo url of the car
+ *                      description: The user's role
  *                  createdAt:
  *                      type: timestamp
  *                      description: The date the data was created
@@ -52,13 +46,46 @@ const userController = require("../controllers/user.controller.js");
  *              properties:
  *                  name:
  *                      type: string
- *                      description: The name of the car
+ *                      description: The user's name
  *                  email:
  *                      type: string
- *                      description: The price of the car
+ *                      description: The user's email
  *                  password:
  *                      type: string
- *                      description: The size of the car
+ *                      description: The user's password
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          UserResponse:
+ *              type: object
+ *              properties:
+ *                  email:
+ *                      type: string
+ *                      description: The user's email
+ *                  role:
+ *                      type: string
+ *                      description: The user's role
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          RegisterResponse:
+ *              type: object
+ *              properties:
+ *                  status:
+ *                      type: integer
+ *                      description: HTTP status code
+ *                  message:
+ *                      type: string
+ *                      description: The message response
+ *                  data:
+ *                      description: The data result
+ *                      $ref: '#/components/schemas/UserResponse'
  */ 
 
 /**
@@ -73,10 +100,56 @@ const userController = require("../controllers/user.controller.js");
  *              properties:
  *                  email:
  *                      type: string
- *                      description: The price of the car
+ *                      description: The user's email
  *                  password:
  *                      type: string
- *                      description: The size of the car
+ *                      description: The user's password
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          LoginResponse:
+ *              type: object
+ *              properties:
+ *                  status:
+ *                      type: integer
+ *                      description: HTTP status code
+ *                  message:
+ *                      type: string
+ *                      description: The message response
+ *                  data:
+ *                      description: The data result
+ *                      type: object
+ *                      properties:
+ *                          Token:
+ *                              type: string
+ *                              description: The user's access token
+ */ 
+
+/**
+ * @swagger
+ * components:
+ *      schemas:
+ *          ProfileResponse:
+ *              type: object
+ *              properties:
+ *                  id:
+ *                      type: integer
+ *                      description: The user's id
+ *                  email:
+ *                      type: string
+ *                      description: The user's email
+ *                  role:
+ *                      type: string
+ *                      description: The user's role
+ *                  createdAt:
+ *                      type: timestamp
+ *                      description: The date the data was created
+ *                  updatedAt:
+ *                      type: timestamp
+ *                      description: The date the data was updated
  */ 
 
 // Register Member
@@ -99,7 +172,7 @@ const userController = require("../controllers/user.controller.js");
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/User'
+ *                              $ref: '#/components/schemas/UserResponse'
  */ 
 router.post("/api/register/member", userController.registerMemberHandler);
 
@@ -123,7 +196,7 @@ router.post("/api/register/member", userController.registerMemberHandler);
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/User'
+ *                              $ref: '#/components/schemas/UserResponse'
  */ 
 router.post("/api/register/admin", userController.registerAdminHandler);
 
@@ -147,7 +220,7 @@ router.post("/api/register/admin", userController.registerAdminHandler);
  *                  content:
  *                      application/json:
  *                          schema:
- *                              $ref: '#/components/schemas/User'
+ *                              $ref: '#/components/schemas/LoginResponse'
  */ 
 router.post("/api/login", userController.loginHandler);
 

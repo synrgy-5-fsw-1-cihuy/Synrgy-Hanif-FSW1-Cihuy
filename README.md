@@ -6,6 +6,11 @@
 
 ## Router Endpoint
 
+## API-Docs
+- Swagger UI link : [http://localhost:8005/api-docs/]
+
+## CARS
+
 ### GET :
 - "/api/cars" : get all cars
 
@@ -145,3 +150,18 @@ Response
   "message": "Car deleted"
 }
 ```
+
+## USER
+
+### REGISTER MEMBER
+### REGISTER ADMIN
+### LOGIN
+### CURRENT USER/PROFILE
+
+
+## NOTE
+Case :
+- Terdapat endpoint untuk menambahkan admin yang mana hanya boleh dilakukan
+oleh superadmin : Not fully implemented
+
+Saya agak kurang yakin dengan cara implementasi bagian ini. Di pikiran saya, kita perlu membuat akun superadmin secara manual melalui database langsung ataupun dengan endpoint. Tapi jika saya membuat endpoint untuk 'create superadmin account', rasanya berlawanan dengan purpose/tujuan dari case tersebut. Sehingga pada bagian case ini saya hanya membuat endpoint 'registrasi member' dan 'registrasi admin', dengan anggapan untuk membuat akun admin perlu authorization dari superadmin.
