@@ -1,19 +1,19 @@
+import style from "./footer.module.css";
+import {Div, H1} from "./StyledDiv.js";
+
 // Functional component
 const Footer = () => {
     return (
-        // <div>
-        //     Ini Footer
-        // </div>
         <>
         <div>
-            Ini Footer
+            <div className={style["Footer"]}>Ini Footer</div>
         </div>
-        <div>
+        <Div>
             Ini Footer 2
-        </div>
-        <div>
+        </Div>
+        <H1>
             Ini Footer 3
-        </div>
+        </H1>
         </>
     );
 };

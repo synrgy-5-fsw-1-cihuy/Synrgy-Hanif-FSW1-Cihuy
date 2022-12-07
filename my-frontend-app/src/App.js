@@ -6,13 +6,22 @@ import Footer from './components/footer/Footer';
 import FAQ from './faq/FAQ';
 
 function App() {
+  const person = {
+    name: "Roger"
+  };
+  
   return (
+    
     <div className="App">
-      <header className="App-header">
       <Header />
-      <Content />
+      <Content 
+      name="Zaki"
+      person={person}
+      />
       <FAQ />
       <Footer />
+      <header className="App-header">
+      
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
