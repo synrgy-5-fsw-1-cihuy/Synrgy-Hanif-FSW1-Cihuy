@@ -12,6 +12,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState } from 'react';
+import User from './components/user/User';
 
 function App() {
   const person = {
@@ -32,6 +33,7 @@ function App() {
             <Nav.Link onClick={() => setPage("contact")} href={`http://localhost:3000/${page}`}>Contact</Nav.Link>
             <Nav.Link onClick={() => setPage("about")} href={`http://localhost:3000/${page}`}>About</Nav.Link>
             <Nav.Link onClick={() => setPage("profile")} href={`http://localhost:3000/${page}`}>Profile</Nav.Link>
+            <Nav.Link onClick={() => setPage("user")} href={`http://localhost:3000/${page}`}>User</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -41,6 +43,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/user' element={<User />} />
         </Routes>
       </Router>
 
