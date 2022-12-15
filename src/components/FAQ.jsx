@@ -2,6 +2,7 @@ import { Accordion, Col, Row } from "react-bootstrap";
 
 const FAQ = () => {
     return (
+        <section id="faq">
         <Row className="justify-content-center my-5">
             <Col xs={12} md={4} className="ms-5 ms-md-0 ps-3 ps-md-0">
                 <div className="text-title fs-4">
@@ -46,6 +47,7 @@ const FAQ = () => {
                 </Accordion>
             </Col>
         </Row>
+        </section>
     )
 }
 
