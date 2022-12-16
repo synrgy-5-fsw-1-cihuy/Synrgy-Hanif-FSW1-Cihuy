@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
     return (
@@ -9,9 +10,11 @@ const NavigationBar = () => {
         <section id="navbar">
         <Navbar collapseOnSelect expand="lg" style={{backgroundColor: '#F1F3FF'}}>
             <Container>
-                <Navbar.Brand href="#home">
+                <Link to="/">
+                <Navbar.Brand>
                     <img src="./assets/img/binar.svg" alt="Binar Rental Car" />
                 </Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ms-auto me-4">

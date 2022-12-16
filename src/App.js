@@ -1,25 +1,21 @@
 // import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import './assets/style.css'
-import FAQ from './components/FAQ';
+import CarsPage from './components/CarsPage';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
-import Jumbotron from './components/Jumbotron';
+import HomePage from './components/HomePage';
 import NavigationBar from './components/NavigationBar';
-import Service from './components/Service';
-import Testimonial from './components/Testimonial';
-import WhyUs from './components/WhyUs';
 
 function App() {
   return (
     <>
     <NavigationBar />
-    <Hero />
-    <Service />
-    <WhyUs />
-    <Testimonial />
-    <Jumbotron />
-    <FAQ />
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path='/cars' element={<CarsPage />} />
+    </Routes>
+    
     <Footer />
     </>
   );

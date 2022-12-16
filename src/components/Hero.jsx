@@ -1,4 +1,5 @@
-import { Button, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -13,7 +14,7 @@ const Hero = () => {
                     terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
                     </p>
                     <div className="mx-3 mx-sm-4 ms-lg-5 px-2 px-sm-4 ps-lg-5 pb-md-3">
-                    <Button className="btn btn-banner fw-semibold">Mulai Sewa Mobil</Button>
+                    <Link to="/cars" className="btn btn-banner fw-semibold">Mulai Sewa Mobil</Link>
                     </div>
                 </div>
                 <div className="align-self-center">
