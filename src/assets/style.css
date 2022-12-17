@@ -146,6 +146,32 @@ body {
     color: #8A8A8A;
 }
 
+.car-card {
+    height: 100% !important;
+    width: 22rem !important;
+}
+
+.image-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+    overflow: hidden;
+    max-width: 100%;
+    height: 255px;
+}
+
+.image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-car-select {
+    width: 300px; 
+    /* bottom: 20px; */
+}
+
 @media screen and (max-width: 768px) {
     .carousel-inner{
         /* position: absolute; */

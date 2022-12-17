@@ -1,7 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Card, Container, Form, Button, Row, Col } from "react-bootstrap";
 import Hero from "./Hero";
+import { FiUserCheck, FiUserX, FiCalendar } from "react-icons/fi"
+import { GrGroup } from "react-icons/gr"
+import { BsGear } from "react-icons/bs"
+
+const CARS_ENDPOINT_URL = 'http://localhost:8080/api/cars';
 
 const CarsPage = () => {
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+        getAllCars();
+    }, []);
+
+    const getAllCars = async () => {
+        const cars = await axios.get(CARS_ENDPOINT_URL);
+        console.log(cars.data.data);
+        setCars(cars.data.data);
+    };
+
     return (
         <>
             <Hero />
@@ -42,6 +61,49 @@ const CarsPage = () => {
                                 </Col>
                             </Form>
                         </Col>
+                    </Row>
+                    
+                </Container>
+                <Container className="py-4">
+                    <Row>
+                        { cars.map((car, index) => {
+                            return <Col className="py-3">
+                            <Card key={index} className="car-card shadow border-0 flex-fill">
+                                <div className="image-container">
+                                <Card.Img variant="top" src={car.image}/>
+                                </div>
+                                <Card.Body className="d-flex flex-column gy-3">
+                                    <Card.Title className="px-2">{car.manufacture}/{car.model}</Card.Title>
+                                    <Card.Text className="px-2">
+                                        <h5 className="fw-bold">{car.rentPerDay.toLocaleString("id", {
+                                            style: "currency", 
+                                            currency: "IDR",
+                                            })}{" "}/ hari
+                                        </h5>
+                                        <p>{car.description}</p>
+                                        <p>{car.driverType === 1 ? (
+                                            <>
+                                            <FiUserCheck className="me-2" />
+                                            <span>Dengan Sopir</span>
+                                            </>
+                                            ):(
+                                            <>
+                                            <FiUserX className="me-2" />
+                                            <span>Tanpa Sopir (Lepas Kunci)</span>
+                                            </>
+                                            )}
+                                        </p>
+                                        <p><GrGroup className="me-2" />{car.capacity} Orang</p>
+                                        <p><BsGear className="me-2" />{car.transmission}</p>
+                                        <p><FiCalendar className="me-2" />{car.year}</p>
+                                        <p>{new Date(car.availableAt).toLocaleString()}</p>
+                                    </Card.Text>
+
+                                    <Button className="btn btn-banner btn-block btn-car-select fw-semibold ms-2 mt-auto mb-0 ">Pilih Mobil</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        })}
                     </Row>
                 </Container>
 
