@@ -172,6 +172,11 @@ body {
     /* bottom: 20px; */
 }
 
+.btn-reset {
+    border: 0px;
+    border-radius: 2px !important;
+}
+
 @media screen and (max-width: 768px) {
     .carousel-inner{
         /* position: absolute; */
