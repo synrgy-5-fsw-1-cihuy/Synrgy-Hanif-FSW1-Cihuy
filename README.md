@@ -1,3 +1,19 @@
+# Challenge-07
+
+## Server: 
+
+https://github.com/synrgy-5-fsw-1-cihuy/challenge-7-dummy-server.git
+
+Local demo: [http://localhost:8080/api/cars](http://localhost:8080/api/cars)
+
+Provided by the one and only @zekhoi sama
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
